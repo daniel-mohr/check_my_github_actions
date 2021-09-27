@@ -60,6 +60,31 @@ jobs:
         with:
           cmdfile: ./do_test
 
+  amd64_opensuse_leap_latest:
+    # https://github.com/daniel-mohr/amd64_opensuse_leap_latest
+    runs-on: ubuntu-latest
+    name: opensuse leap latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: create test script for docker
+        run: |
+          echo "#!/bin/sh -l" > do_test
+          echo "set -e -x" >> do_test
+          echo "zypper refresh" >> do_test
+          echo "zypper --non-interactive install dpkg lsb-release" >> do_test
+          echo "zypper --non-interactive install python3" >> do_test
+          echo "uname -a" >> run_test_suite
+          echo "dpkg --print-architecture" >> run_test_suite
+          echo "lsb_release -a" >> run_test_suite
+          echo "lscpu" >> run_test_suite
+          echo "env python3 -V" >> do_test
+          chmod +x do_test
+      - name: run my script in docker image
+        uses: daniel-mohr/amd64_opensuse_leap_latest@v0
+        with:
+          cmdfile: ./do_test
+
   i386_debian_latest_listing:
     # https://github.com/daniel-mohr/i386_debian_latest
     runs-on: ubuntu-latest
