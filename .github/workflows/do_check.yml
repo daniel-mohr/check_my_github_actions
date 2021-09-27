@@ -21,13 +21,11 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
-          echo "zypper refresh" >> do_test
-          echo "zypper --non-interactive install dpkg lsb-release" >> do_test
-          echo "zypper --non-interactive install python3" >> do_test
-          echo "uname -a" >> run_test_suite
-          echo "dpkg --print-architecture" >> run_test_suite
-          echo "lsb_release -a" >> run_test_suite
-          echo "lscpu" >> run_test_suite
+          echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
+          echo "uname -a" >> do_test
+          echo "dpkg --print-architecture" >> do_test
+          echo "lsb_release -a" >> do_test
+          echo "lscpu" >> do_test
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
@@ -46,13 +44,11 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
-          echo "zypper refresh" >> do_test
-          echo "zypper --non-interactive install dpkg lsb-release" >> do_test
-          echo "zypper --non-interactive install python3" >> do_test
-          echo "uname -a" >> run_test_suite
-          echo "dpkg --print-architecture" >> run_test_suite
-          echo "lsb_release -a" >> run_test_suite
-          echo "lscpu" >> run_test_suite
+          echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
+          echo "uname -a" >> do_test
+          echo "dpkg --print-architecture" >> do_test
+          echo "lsb_release -a" >> do_test
+          echo "lscpu" >> do_test
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
@@ -71,13 +67,11 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
-          echo "zypper refresh" >> do_test
-          echo "zypper --non-interactive install dpkg lsb-release" >> do_test
-          echo "zypper --non-interactive install python3" >> do_test
-          echo "uname -a" >> run_test_suite
-          echo "dpkg --print-architecture" >> run_test_suite
-          echo "lsb_release -a" >> run_test_suite
-          echo "lscpu" >> run_test_suite
+          echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
+          echo "uname -a" >> do_test
+          echo "dpkg --print-architecture" >> do_test
+          echo "lsb_release -a" >> do_test
+          echo "lscpu" >> do_test
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
@@ -96,12 +90,11 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
-          echo "apt-get update" >> do_test
           echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release" >> do_test
-          echo "uname -a" >> run_test_suite
-          echo "dpkg --print-architecture" >> run_test_suite
-          echo "lsb_release -a" >> run_test_suite
-          echo "lscpu" >> run_test_suite
+          echo "uname -a" >> do_test
+          echo "dpkg --print-architecture" >> do_test
+          echo "lsb_release -a" >> do_test
+          echo "lscpu" >> do_test
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
@@ -120,12 +113,11 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
-          echo "apt-get update" >> do_test
           echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release" >> do_test
-          echo "uname -a" >> run_test_suite
-          echo "dpkg --print-architecture" >> run_test_suite
-          echo "lsb_release -a" >> run_test_suite
-          echo "lscpu" >> run_test_suite
+          echo "uname -a" >> do_test
+          echo "dpkg --print-architecture" >> do_test
+          echo "lsb_release -a" >> do_test
+          echo "lscpu" >> do_test
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
