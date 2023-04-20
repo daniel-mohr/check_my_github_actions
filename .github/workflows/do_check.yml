@@ -85,7 +85,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/amd64_opensuse_leap_15.4@v0
+        uses: daniel-mohr/amd64_opensuse_leap_15.4@main
         with:
           cmdfile: ./do_test
 
@@ -108,7 +108,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/amd64_opensuse_leap_15.5@latest
+        uses: daniel-mohr/amd64_opensuse_leap_15.5@main
         with:
           cmdfile: ./do_test
 
