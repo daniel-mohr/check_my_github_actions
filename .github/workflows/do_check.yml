@@ -26,11 +26,12 @@ jobs:
     name: opensuse leap 15.2
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: create test script for docker
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -39,7 +40,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/amd64_opensuse_leap_15.2@v0
+        uses: daniel-mohr/amd64_opensuse_leap_15.2@master
         with:
           cmdfile: ./do_test
 
@@ -54,6 +55,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -62,7 +64,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/amd64_opensuse_leap_15.3@v0
+        uses: daniel-mohr/amd64_opensuse_leap_15.3@master
         with:
           cmdfile: ./do_test
 
@@ -77,6 +79,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -100,6 +103,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -123,6 +127,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "zypper --non-interactive install dpkg lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -131,7 +136,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/amd64_opensuse_leap_latest@v0
+        uses: daniel-mohr/amd64_opensuse_leap_latest@master
         with:
           cmdfile: ./do_test
 
@@ -146,6 +151,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -154,7 +160,7 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/i386_debian_latest@v0
+        uses: daniel-mohr/i386_debian_latest@master
         with:
           cmdfile: ./do_test
 
@@ -169,6 +175,7 @@ jobs:
         run: |
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
+          echo "cat /etc/os-release" >> do_test
           echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
@@ -177,6 +184,6 @@ jobs:
           echo "env python3 -V" >> do_test
           chmod +x do_test
       - name: run my script in docker image
-        uses: daniel-mohr/i386_ubuntu_1804@v0
+        uses: daniel-mohr/i386_ubuntu_1804@master
         with:
           cmdfile: ./do_test
