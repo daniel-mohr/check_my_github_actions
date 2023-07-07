@@ -152,7 +152,7 @@ jobs:
           echo "#!/bin/sh -l" > do_test
           echo "set -e -x" >> do_test
           echo "cat /etc/os-release" >> do_test
-          echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release" >> do_test
+          echo "DEBIAN_FRONTEND=noninteractive apt-get install -q -y lsb-release python3" >> do_test
           echo "uname -a" >> do_test
           echo "dpkg --print-architecture" >> do_test
           echo "lsb_release -a" >> do_test
